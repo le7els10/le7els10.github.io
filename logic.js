@@ -1,3 +1,7 @@
 let name = "Iphone XR";
-console.log(this.navigator.userAgent);
+// var devicename = deviceAPI.deviceName
+
+// console.log(WURFL.complete_device_name);
+name = WURFL.complete_device_name;
+
 document.getElementById("deviceId").innerText = name;
