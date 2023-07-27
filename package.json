@@ -1,0 +1,11 @@
+{
+  "name": "le7els10.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/le7els10/le7els10.github.io.git",
+  "author": "Juan Nuñez <le7els10@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ios-device-list": "^1.1.37"
+  }
+}

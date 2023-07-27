@@ -1,7 +1,19 @@
-let name = "Iphone XR";
-// var devicename = deviceAPI.deviceName
+const detectSo = () => {
+  if (/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+    if (navigator.userAgent.toLowerCase().search("android") > -1) {
+      return "android";
+    } else {
+      return "ios";
+    }
+  }
 
-// console.log(WURFL.complete_device_name);
-name = WURFL.complete_device_name;
+  return "ios";
+};
 
-document.getElementById("deviceId").innerText = name;
+let name = detectSo();
+let windowWidth = window.screen.width;
+let windowHeight = window.screen.height;
+
+document.getElementById(
+  "deviceId"
+).innerText = `${name}, ${windowWidth}x${windowHeight}`;
