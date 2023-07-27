@@ -11,8 +11,8 @@ const detectSo = () => {
 };
 
 let name = detectSo();
-let windowWidth = window.screen.width;
-let windowHeight = window.screen.height;
+let windowWidth = window.screen.availWidth;
+let windowHeight = window.screen.availHeight;
 
 document.getElementById(
   "deviceId"
