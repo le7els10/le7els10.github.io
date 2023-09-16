@@ -1,0 +1,201 @@
+$gray: #ffffff73;
+$shadow: rgba(94, 104, 121, 0.288);
+$box: -3px -3px 7px $gray, 3px 3px 5px $shadow;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+
+  button {
+    cursor: pointer;
+    border: none;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.App {
+  max-width: 900px;
+  margin: 50px auto;
+  border-radius: 10px;
+  padding: 1rem;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .face {
+      border-radius: 10px;
+      box-shadow: -3px -3px 7px $gray, 3px 3px 5px $shadow;
+      max-width: 100px;
+      object-fit: cover;
+      object-position: top;
+      width: 100px;
+      height: 100px;
+    }
+
+    .name-container {
+      text-align: center;
+
+      h1,
+      p {
+        margin: 0;
+      }
+    }
+
+    .btn-download,
+    .btn-languaje {
+      width: 50px;
+      height: 50px;
+      background-color: transparent;
+      border-radius: 10px;
+      transition: 0.4s;
+      font-size: 30px;
+
+      &:hover {
+        box-shadow: -3px -3px 7px $gray, 3px 3px 5px $shadow;
+      }
+
+      &:active {
+        box-shadow: inset -3px -3px 7px $gray, inset 3px 3px 5px $shadow;
+      }
+    }
+  }
+
+  section {
+    .block-container {
+      margin: 10px 0;
+      padding: 1rem 1.3rem;
+      border-radius: 10px;
+      box-shadow: 1px 1px 5px #d9d9d9, -1px -1px 5px #fff;
+
+      h2 {
+        margin: 0;
+        border-bottom: 2px solid black;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+
+      .spill-container {
+        margin: 0.5rem 0;
+
+        h4 {
+          margin: 0;
+        }
+
+        span,
+        a {
+          text-decoration: none;
+          font-size: 0.93em;
+          color: grey;
+        }
+      }
+
+      .habilities-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+      }
+    }
+
+    .progress-container {
+      h4 {
+        margin: 0;
+      }
+
+      .progress-bar {
+        margin: 5px 0;
+        height: 20px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+
+        &--level{
+          position: relative;
+          border-radius: 10px;
+          background-color: #bbba;
+          height: 5px;
+
+          &__filled{
+            background-color: black;
+          }
+
+          .text{
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%,50%);
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    header {
+      .face {
+        display: none;
+      }
+
+      .btn-container {
+        position: fixed;
+        top: 50%;
+        right: 5%;
+      }
+    }
+  }
+}
+
+@media print {
+  body {
+    font-size: 15px;
+  }
+
+  .App {
+    margin: 2rem auto 0;
+    padding: 0 2rem;
+    box-shadow: none;
+
+    header {
+      .btn-download,
+      .btn-languaje {
+        display: none;
+      }
+    }
+
+    section {
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-weight: normal;
+      }
+
+      .habilities-container {
+        .progress-container {
+          .progress-bar {
+            height: 5px;
+          }
+        }
+      }
+
+      .progress-container {
+        -webkit-print-color-adjust: exact;
+        /*economy | exact*/
+        color-adjust: exact;
+      }
+
+      .break {
+        page-break-before: always;
+      }
+    }
+  }
+}
